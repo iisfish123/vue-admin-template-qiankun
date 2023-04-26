@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <span @click="handleToHome">Home</span> |
+      <span @click="handleToAbout">About</span>
     </nav>
     <router-view></router-view>
   </div>
@@ -13,13 +13,17 @@
 export default {
   // components: { LayoutIndex },
   methods: {
-    handleClick() {
-      this.$router.push('/about')
+    handleToHome() {
+      this.$router.push('/micro1')
+    },
+    handleToAbout() {
+      this.$router.push('/micro1/about')
     }
   }
 }
 </script>
 <style>
+/** 这里没有样式隔离 */
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

@@ -1,17 +1,26 @@
 <template>
   <section class="app-main">
-    <transition name="fade-transform" mode="out-in">
+    <transition-group name="fade-transform" mode="out-in">
       <router-view :key="key" />
-    </transition>
+    </transition-group>
+    <div id="micro" />
   </section>
 </template>
 
 <script>
+import { start } from 'qiankun'
+
 export default {
   name: 'AppMain',
   computed: {
     key() {
       return this.$route.path
+    }
+  },
+  mounted() {
+    if (!window.qiankunStarted) {
+      window.qiankunStarted = true
+      start({ sandbox: { strictStyleIsolation: true }})
     }
   }
 }

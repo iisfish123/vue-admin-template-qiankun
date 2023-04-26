@@ -7,6 +7,7 @@
         <navbar />
       </div>
       <app-main />
+      <!-- <div id="micro" /> -->
     </div>
   </div>
 </template>
@@ -14,6 +15,7 @@
 <script>
 import { Navbar, Sidebar, AppMain } from './components'
 import ResizeMixin from './mixin/ResizeHandler'
+// import { start } from 'qiankun'
 
 export default {
   name: 'Layout',
@@ -42,6 +44,14 @@ export default {
       }
     }
   },
+  // mounted() {
+  //   setTimeout(() => {
+  //     if (!window.qiankunStarted) {
+  //       window.qiankunStarted = true
+  //       start({ sandbox: true })
+  //     }
+  //   }, 2000)
+  // },
   methods: {
     handleClickOutside() {
       this.$store.dispatch('app/closeSideBar', { withoutAnimation: false })

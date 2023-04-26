@@ -46,7 +46,7 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    // redirect: '/dashboard',
+    redirect: '/dashboard',
     children: [{
       path: 'dashboard',
       name: 'Dashboard',
@@ -162,7 +162,23 @@ export const constantRoutes = [
 
   {
     path: '/micro1/*',
-    component: () => import('@/views/micro1/index')
+    component: Layout,
+    meta: {
+      title: 'qiankun',
+      icon: 'nested'
+    },
+    children: [
+      {
+        path: '/micro1/',
+        name: 'micro1',
+        meta: { title: 'micro1', icon: 'dashboard' }
+      },
+      {
+        path: '/micro2/',
+        name: 'micro2',
+        meta: { title: 'micro2', icon: 'dashboard' }
+      }
+    ]
   }
 
   // {
