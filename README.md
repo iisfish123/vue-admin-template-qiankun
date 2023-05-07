@@ -97,3 +97,5 @@ Modern browsers and Internet Explorer 10+.
 [MIT](https://github.com/PanJiaChen/vue-admin-template/blob/master/LICENSE) license.
 
 Copyright (c) 2017-present PanJiaChen
+
+## 分别启动主应用和子应用，并访问主应用的端口： http://localhost:8080/#/micro1/test
